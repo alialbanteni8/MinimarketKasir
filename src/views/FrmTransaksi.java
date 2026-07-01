@@ -315,7 +315,13 @@ public class FrmTransaksi extends javax.swing.JFrame {
         
                psDetail.executeUpdate();
         }
-              
+              javax.swing.JOptionPane.showMessageDialog(this, "Transaksi Berhasil Disimpan Ke Database!");
+
+} catch (java.sql.SQLException e) {
+    javax.swing.JOptionPane.showMessageDialog(this, "Gagal menyimpan transaksi: " + e.getMessage());
+} catch (NumberFormatException nfe) {
+    javax.swing.JOptionPane.showMessageDialog(this, "Format Angka Salah: Pastikan input total/jumlah berisi angka!");
+}
 
             // Sukses! Kasih notifikasi ke kasir
             JOptionPane.showMessageDialog(this, "Transaksi Berhasil Disimpan ke Database, Bre!");
